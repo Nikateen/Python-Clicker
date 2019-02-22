@@ -1,6 +1,6 @@
 # Python-Clicker
 
-<i>Uses python to click the specified coordinates on the screen repeatedly the specified number of times.</i>
+<i>Uses python3 to click the specified coordinates on the screen repeatedly the specified number of times.</i>
 
 <h3><b>IMPORTANT:</b></h3>
 <h5><b>FAILSAFE:</b> Quickly move mouse to top left of the screen</h5>
