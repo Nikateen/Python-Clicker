@@ -16,17 +16,18 @@ Each line in the Coordinates.txt file contains the following: x y n <br />
 this will click the point (x,y) on your screen 'n' times before moving on to the next coordinate <br />
 
 **Example:** <br />
-__in Coordinates.txt__
+_if Coordinates.txt has_ <br />
 10 10 1 <br />
 20 20 2 <br />
 
-will click (10,10) 1 time then will click (20,20) 2 times during each iteration of the program.
+Then the clicker will click (10,10) 1 time, and then it will click (20,20) 2 times during each iteration of the program.
 
 
 **To find coordinates on your screen:**
 1.  Run the coordFinder script: <br />
     * On Linux/MacOS: ```python3 coordFinder.py```
     * On Windows: ```py coordFinder.py```
+    
 2.  Hover your mouse over any place on the screen and click 'p' on your keyboard. <br /> This will print the coordinates of your mouse onto the terminal, you can enter these coordinates in Coordinates.txt in the correct format 
 
 
