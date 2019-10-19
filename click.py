@@ -19,7 +19,7 @@ def clicker(numberOfIterations, coords):
                 pyautogui.moveTo(int(x), int(y), duration=0.1)
                 pyautogui.mouseDown()
                 pyautogui.mouseUp()
-
+                print("clicked (" + str(x) + "," + str(y) +")")
 
 
 def listen():
@@ -30,15 +30,15 @@ def listen():
 
 
 def on_press(key):
-    print('{0} pressed'.format(
-        key))
+    #print('{0} pressed'.format(key))
+    pass
 
 
 def on_release(key):
     #print('{0} release'.format(key))
 
     if str(key) == "'p'":
-        thread = threading.Thread(target=clicker,args=( 20 ,[ [10,10,1 ] ], ) )
+        thread = threading.Thread(target=clicker,args=( numberOfIterations ,coords, ) )
         thread_list.append(thread)
         thread.start()
 
@@ -48,14 +48,28 @@ def on_release(key):
 
 
 numberOfIterations = 1
-
+coords = []
 
 if len(sys.argv) > 1:
     if( sys.argv[1].isdigit() ):
-        numberOfIterations = 1
+        numberOfIterations = sys.argv[1]
     else:
         print("Error!\nnumber of iterations must be a valid number!")
         exit(0)
+
+try:
+    f = open("Coordinates.txt","r")
+
+    try:
+        for i in f.readlines():
+            coords.append(i.split())
+    except:
+        print("Error!\nCoordinates.txt file is empty!")
+        exit(0)
+
+except:
+    print("Error!\nCoordinates.txt file not found!")
+    exit(0)
 
 thread1 = threading.Thread(target=listen)
 thread_list.append(thread1)
